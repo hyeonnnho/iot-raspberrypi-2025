@@ -98,4 +98,36 @@ sudo apt install qttools5-dev-tools
 - VNC > 열매 > 개발 > Qt 5 Designer
     - GUI로 창 구성
     - *.ui로 저장
-- 
+    ```python
+    import sys
+    from PyQt5.QtWidgets import *
+    from PyQt5 import uic
+
+    class WindowClass(QDialog):
+        def __init__(self, parent = None):
+                super().__init__(parent)
+                self.ui = uic.loadUi("design1.ui", self) # UI파일을 파이썬 코드로 불러옮
+                self.ui.show()
+
+        def slot1(self):        # 버튼 누를 때 동작
+                print("Bye Bye~~")
+
+    if __name__ == "__main__":
+        app = QApplication(sys.argv)
+        myWindow = WindowClass()
+        app.exec_()
+
+    ```
+
+### Buzzer
+- BUZZER[소스](./buzzer.py)
+- 키보드를 사용한 Piano[소스](./Piano.py)
+- 알람 시스템[소스](./alert_system.py)
+
+### Relaymodule
+- Relaymodule 정상 테스트[소스](./relaymodule.py)
+
+- NC/COM/NO
+    - NC : 평소(릴레이가 꺼졌을 때) 닫혀 있는 회로. 즉, 항상 전기가 흐르는 상태.
+    - COM : 공통 단자. 입력 전압이 들어오는 곳 (보통 +전원이나 신호선).
+    - NO : 평소에는 열려 있음. 릴레이가 작동하면 닫혀서 전기가 흐르게 됨.
