@@ -131,3 +131,23 @@ sudo apt install qttools5-dev-tools
     - NC : 평소(릴레이가 꺼졌을 때) 닫혀 있는 회로. 즉, 항상 전기가 흐르는 상태.
     - COM : 공통 단자. 입력 전압이 들어오는 곳 (보통 +전원이나 신호선).
     - NO : 평소에는 열려 있음. 릴레이가 작동하면 닫혀서 전기가 흐르게 됨.
+
+### Flask Web Server
+- Flask Server[소스](./appTes.py)
+<img src="./image/ras01.png" width="500">
+
+- Flask Server를 통한 LED 제어[소스](./ledapp.py)
+<img src="./image/ras02.png" width="500">
+
+### 미니 프로젝트
+- 지역별 실시간 미세먼지 데이터를 이용한 LED표시장치
+- [API 활용 신청](https://www.data.go.kr/data/15073861/openapi.do)
+- 시도별 실시간 측정정보 조회
+    - 지역이름 입력 후
+    - 미리보기
+    - 데이터 주소 복사 후 url에 붙여넣기
+- 코드 작성[소스](./Project_main.py)
+- 실행 후 LED 확인
+
+- 실행화면
+<img src="./image/ras03.png" width="500">
